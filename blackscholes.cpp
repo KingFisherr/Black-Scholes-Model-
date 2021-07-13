@@ -39,11 +39,7 @@ double Boole (double StartPoint, double EndPoint, int n) {
 
       int ind = 4 * t;
 
-      sum +=
-
-  (1 / 45.0) * (14 * Y[ind] + 64 * Y[ind + 1] + 24 * Y[ind + 2] +
-
-        64 * Y[ind + 3] + 14 * Y[ind + 4]) * delta_x;
+      sum += (1 / 45.0) * (14 * Y[ind] + 64 * Y[ind + 1] + 24 * Y[ind + 2] + 64 * Y[ind + 3] + 14 * Y[ind + 4]) * delta_x;
 
     }
 
