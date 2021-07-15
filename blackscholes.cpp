@@ -27,21 +27,27 @@ double Boole (double StartPoint, double EndPoint, int n) {
 
   for (int i = 0; i <= n; i++) {
 
-      X[i] = StartPoint + i * delta_x;
+    X[i] = StartPoint + i * delta_x;
 
-      Y[i] = f (X[i]);
+    Y[i] = f (X[i]);
 
-}
+  }
 
   double sum = 0;
 
   for (int t = 0; t <= (n - 1) / 4; t++) {
 
-      int ind = 4 * t;
+    int ind = 4 * t;
 
-      sum += (1 / 45.0) * (14 * Y[ind] + 64 * Y[ind + 1] + 24 * Y[ind + 2] + 64 * Y[ind + 3] + 14 * Y[ind + 4]) * delta_x;
+    sum += (1 / 45.0) * (14 * Y[ind] + 64 * Y[ind + 1] + 24 * Y[ind + 2] + 64 * Y[ind + 3] + 14 * Y[ind + 4]) * delta_x;
 
-    }
+  }
 
   return sum;
+}
+
+double N (double x) {
+
+  return Boole (-10.0, x, 240);
+
 }
