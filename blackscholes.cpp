@@ -51,3 +51,19 @@ double N (double x) {
   return Boole (-10.0, x, 240);
 
 }
+
+
+// Black-Scholes Call Price
+
+double BSPrice (double S, double K, double T, double r,double q, double v, char OpType) {
+
+  double d = (log (S / K) + T * (r - q + 0.5 * v * v)) / (v * sqrt (T));
+
+  double call = S *exp(-q*T)* N (d) - exp (-r * T) * K * N (d - v * sqrt (T));
+
+  if (OpType == 'C') return call;
+
+  else return call - S*exp (-q * T) + K * exp (-r * T);
+
+}
+
