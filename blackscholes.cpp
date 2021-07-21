@@ -67,3 +67,22 @@ double BSPrice (double S, double K, double T, double r,double q, double v, char 
 
 }
 
+int main () {
+  // Maybe we can add user input
+  double S = 100.0;  // Stock Price
+
+  double K = 100.0;  // Strike Price
+
+  double T = 1;   // Years to maturity
+
+  double r = 0.05;  // Risk free interest rate
+
+  double q = 0.0;
+
+  double v = 0.20;  // Yearly volatility
+
+  char OpType = 'C';  // 'C'all or 'P'ut
+
+  cout << "Black Scholes Price " << BSPrice (S, K, T, r, q, v, OpType) << endl;
+
+};
